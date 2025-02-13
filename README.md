@@ -8,8 +8,6 @@ Este proyecto es una **Single Page Application (SPA)** que permite gestionar una
 
 La estructura del proyecto sigue una organización clara para separar la lógica de la aplicación, las vistas y el manejo de eventos.
 
-📂 Estructura del Proyecto
-
 📂 TODOLIST/
 │── index.html        # Archivo principal de la SPA
 │── 📁 app/           # Lógica de la aplicación (MVC)
