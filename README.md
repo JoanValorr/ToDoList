@@ -1,8 +1,12 @@
-📌 To-Do List SPA
+# To-Do List SPA
 
-📖 Descripción
+## Descripción
 
-Este proyecto es una Single Page Application (SPA) que permite gestionar una lista de tareas con funcionalidades de login, creación, edición, eliminación y marcado de tareas como completadas. Se basa en el patrón MVC y usa LocalStorage para persistencia.
+Este proyecto es una **Single Page Application (SPA)** que permite gestionar una lista de tareas. Ofrece funcionalidades como login de usuario, creación, edición, eliminación y marcado de tareas como completadas. La aplicación está basada en el patrón **MVC (Modelo-Vista-Controlador)** y utiliza **LocalStorage** para la persistencia de datos.
+
+## Estructura del Proyecto
+
+La estructura del proyecto sigue una organización clara para separar la lógica de la aplicación, las vistas y el manejo de eventos.
 
 📂 Estructura del Proyecto
 
@@ -33,38 +37,39 @@ Este proyecto es una Single Page Application (SPA) que permite gestionar una lis
 │   │   ├── helpers.js    # Utilidades generales
 │── README.md         # Documentación del proyecto
 
-🚀 Funcionalidades
 
-Autenticación básica (login con usuario y contraseña, sin backend, usando LocalStorage).
+## Funcionalidades
 
-Gestión de tareas: crear, editar, eliminar y marcar como completadas.
+### Autenticación
 
-Validaciones en formularios para login y creación de tareas.
+- Login con usuario y contraseña (sin backend, utilizando **LocalStorage** para persistencia).
+- Validación de credenciales y almacenamiento de sesión en **LocalStorage**.
 
-SPA dinámica generando contenido desde JavaScript.
+### Gestión de Tareas
 
-Uso de eventos múltiples (click, submit, input, dblclick, etc.).
+- **Crear tareas**: El usuario puede añadir nuevas tareas.
+- **Editar tareas**: Permite modificar una tarea existente.
+- **Eliminar tareas**: Permite eliminar tareas de la lista.
+- **Marcar tareas como completadas**: Se pueden marcar tareas como completadas y viceversa.
 
-Modificación de atributos HTML para mejorar la experiencia de usuario.
+### Interactividad
 
-🛠 Tecnologías
+- **Validaciones**: Formularios de login y creación de tareas con validaciones.
+- **Eventos**: Manejo de múltiples eventos como `click`, `submit`, `input`, `dblclick`, etc.
+- **Modificación de la interfaz**: Modificación dinámica de los atributos HTML para mejorar la experiencia del usuario.
+- **SPA**: La interfaz se genera dinámicamente a través de JavaScript sin necesidad de recargar la página.
 
-HTML5, CSS3, JavaScript (ES6)
+## Tecnologías
 
-LocalStorage para persistencia de datos
+- **HTML5** para la estructura de la aplicación.
+- **CSS3** para los estilos.
+- **JavaScript (ES6)** para la lógica y funcionalidad de la aplicación.
+- **LocalStorage** para la persistencia de los datos (sin backend).
+- **MVC (Modelo-Vista-Controlador)** para organizar la aplicación.
 
-Patrón MVC para organizar la lógica de la aplicación
+## Instalación y Uso
 
-📌 Instalación y Uso
+### Clonar el repositorio
 
-Clona el repositorio:
-
+```bash
 git clone https://github.com/tu-repo/todolist-spa.git
-
-Abre index.html en tu navegador.
-
-Usa la app para gestionar tus tareas.
-
-📜 Licencia
-
-Proyecto de código abierto bajo la licencia MIT. 🚀
