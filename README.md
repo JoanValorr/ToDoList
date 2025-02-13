@@ -1,21 +1,18 @@
-# Gestor de Tareas (To-Do List Mejorado)
+# Gestor de Tareas (SPA con LocalStorage)
 
-Este es un gestor de tareas basado en SPA (Single Page Application) con autenticación y almacenamiento en base de datos.
+Una aplicación de gestión de tareas con autenticación sin backend, usando `localStorage` para guardar sesiones y tareas.
 
 ## 📌 Funcionalidades
-- Crear, editar, completar y eliminar tareas.
-- Validación en el formulario de tareas (mínimo 3 caracteres, no vacío).
-- Modificación de atributos HTML (`class`, `disabled`, `title`, `data-id`).
-- Múltiples eventos: `click`, `submit`, `input`, `dblclick`.
-- Login con PHP y sesiones para guardar tareas por usuario.
-- Arquitectura **MVC** con separación de lógica, vistas y modelos.
+- Registro e inicio de sesión con almacenamiento en `localStorage`.
+- Cada usuario tiene sus propias tareas.
+- Validación de formularios con mensajes de error.
+- SPA: Todo funciona en un solo `index.html`.
 
-## 📂 Estructura del Proyecto
-- `/public/` → Contiene el frontend (`index.html`, CSS, JS).
-- `/src/` → Backend en PHP (`models`, `controllers`, `config`).
-- `/docs/` → Documentación y explicación del proyecto.
+## 📂 Estructura
+- `/public/` → Contiene HTML, CSS y JS.
+- `/docs/` → Documentación.
 
 ## ⚙️ Instalación
-1. Clonar el repositorio:
+1. Clona el repositorio:
    ```sh
    git clone https://github.com/tu-usuario/gestor-tareas.git
