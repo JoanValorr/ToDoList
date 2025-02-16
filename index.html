@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📌 To-Do List</h1>
+        <form id="taskForm">
+            <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." required />
+            <button type="submit">➕ Agregar</button>
+        </form>
+
+        <div id="taskLists">
+            <div class="list-container">
+                <h3>Pendientes</h3>
+                <ul id="taskListPending"></ul>
+            </div>
+            <div class="list-container">
+                <h3>En Curso</h3>
+                <ul id="taskListInProgress"></ul>
+            </div>
+            <div class="list-container">
+                <h3>Completadas</h3>
+                <ul id="taskListCompleted"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="public/js/main.js"></script>
+</body>
+</html>

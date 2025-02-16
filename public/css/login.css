@@ -1,0 +1,19 @@
+#loginView {
+    text-align: center;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#loginForm button {
+    background: #007bff;
+}
+
+#loginForm button:hover {
+    background: #0056b3;
+}
