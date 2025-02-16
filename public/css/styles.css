@@ -1,73 +1,103 @@
 /* Estilos generales */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fb;  /* Fondo suave y claro */
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    user-select: none;
+    padding: 40px 0;
 }
 
-/* Contenedor principal */
 .container {
-    width: 80%;
-    max-width: 900px;
-    margin-top: 20px;
-    text-align: center;
+    width: 90%;
+    max-width: 1100px;
+    padding: 40px;
+    border-radius: 12px;
 }
-
+h1{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
 /* Formulario */
 #taskForm {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
 #taskInput {
-    width: 60%;
-    padding: 10px;
+    width: 75%;
+    padding: 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f2f8ff;
+    color: #333;
+    transition: all 0.3s ease-in-out;
 }
 
+#taskInput:focus {
+    border-color: #a3c9f1;
+    background-color: #ffffff;
+}
+
+/* Botones */
 button {
-    background-color: #28a745;
-    color: white;
+    padding: 15px 30px;
+    background-color: #a3c9f1;
+    color: #fff;
     border: none;
-    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #8bbbe2;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 /* Contenedor de listas */
 #taskLists {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    gap: 10px;
+    justify-content: space-between;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .list-container {
     width: 30%;
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 200px;
+    background: #e9f5ff;  /* Color pastel para las columnas */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    min-height: 350px;
+    animation: fadeIn 0.5s ease-out;
 }
 
 h3 {
-    margin-top: 0;
-    text-decoration: underline;
+    font-size: 1.3em;
+    color: #5d6e87;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;  /* Centrado del título */
 }
 
 /* Estilos de las tareas */
@@ -77,46 +107,105 @@ ul {
 }
 
 .taskItem {
-    background: #f8f9fa;
-    margin: 8px 0;
-    padding: 10px;
+    margin: 12px 0;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .taskItem:hover {
-    background: #e9ecef;
+    background: #f0f7ff;
 }
 
-/* Botones dentro de tareas */
 .taskItem button {
-    padding: 5px 10px;
+    padding: 8px 14px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+/* Colores de botones */
 .move {
-    background-color: #007bff;
+    background-color: #84d0b1;  /* Color pastel verde */
+    border: 1px solid #84d0b1;
 }
 
 .move:hover {
-    background-color: #0056b3;
+    background-color: #73b88b;
+    border-color: #73b88b;
 }
 
 .delete {
-    background-color: #dc3545;
+    background-color: #f68b8b;  /* Color pastel rojo */
+    border: 1px solid #f68b8b;
 }
 
 .delete:hover {
-    background-color: #c82333;
+    background-color: #f06b6b;
+    border-color: #f06b6b;
 }
+
 /* Clase para tareas completadas */
 .completed {
     text-decoration: line-through;
-    color: #6c757d; /* Gris oscuro para el texto tachado */
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Animaciones */
+@keyframes fadeInColumn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.list-container {
+    animation: fadeInColumn 0.8s ease-out;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    #taskLists {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .list-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #taskForm {
+        flex-direction: column;
+    }
+
+    #taskInput {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
