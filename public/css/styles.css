@@ -10,15 +10,15 @@ body {
     background-color: #f4f7fb;  /* Fondo suave y claro */
     color: #333;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    height: 100vh;
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
-    padding: 40px;
+    width: 100%;
+    max-width: 1500px;
+    padding: 50px;
     border-radius: 12px;
 }
 h1{
@@ -71,12 +71,32 @@ button:active {
     transform: scale(0.98);
 }
 
+#logoutButton {
+    padding: 10px 20px;
+    background-color: #f68b8b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+#logoutButton:hover {
+    background-color: #f06b6b;
+}
+
+#logoutButton:active {
+    transform: scale(0.98);
+}
+
 /* Contenedor de listas */
 #taskLists {
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    width: 100%;
+    width: 120%;
     flex-wrap: wrap;
 }
 
@@ -208,4 +228,75 @@ ul {
     button {
         width: 100%;
     }
+}
+
+/* Estilos del formulario de inicio de sesión */
+.login-container, .register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: auto;
+}
+
+.login-container h1, .register-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#loginForm, #registerForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loginUsername, #loginPassword, #registerUsername, #registerPassword {
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f2f8ff;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+#loginUsername:focus, #loginPassword:focus, #registerUsername:focus, #registerPassword:focus {
+    border-color: #a3c9f1;
+    background-color: #ffffff;
+}
+
+#loginForm button, #registerForm button {
+    padding: 15px 30px;
+    background-color: #a3c9f1;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#loginForm button:hover, #registerForm button:hover {
+    background-color: #8bbbe2;
+}
+
+#loginForm button:active, #registerForm button:active {
+    transform: scale(0.98);
+}
+
+#loginForm p, #registerForm p {
+    margin-top: 10px;
+}
+
+#loginForm a, #registerForm a {
+    color: #a3c9f1;
+    text-decoration: none;
+}
+
+#loginForm a:hover, #registerForm a:hover {
+    text-decoration: underline;
 }

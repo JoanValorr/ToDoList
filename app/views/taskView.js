@@ -28,7 +28,7 @@ class TaskView {
             li.innerHTML = `
                 ${taskText}
                 <div>
-                    ${task.status !== "completed" ? `<button class="move">➡️</button>` : ""}
+                    <button class="move">➡️</button>
                     <button class="delete">❌</button>
                 </div>
             `;

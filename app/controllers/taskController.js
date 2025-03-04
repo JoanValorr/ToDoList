@@ -64,4 +64,3 @@ class TaskController {
 
 // Exportamos el TaskController para que pueda ser usado en otros archivos
 export default TaskController;
-    

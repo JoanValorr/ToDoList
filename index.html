@@ -7,29 +7,48 @@
     <link rel="stylesheet" href="public/css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>📌 To-Do List</h1>
-        <form id="taskForm">
-            <input type="text" id="taskInput" placeholder="Escribe una nueva tarea..." required />
-            <button type="submit">➕ Agregar</button>
-        </form>
-
-        <div id="taskLists">
-            <div class="list-container">
-                <h3>Pendientes</h3>
-                <ul id="taskListPending"></ul>
-            </div>
-            <div class="list-container">
-                <h3>En Curso</h3>
-                <ul id="taskListInProgress"></ul>
-            </div>
-            <div class="list-container">
-                <h3>Completadas</h3>
-                <ul id="taskListCompleted"></ul>
+    <div id="app">
+        <div class="login-container">
+            <h1>Iniciar Sesión</h1>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Nombre de usuario" required />
+                <input type="password" id="loginPassword" placeholder="Contraseña" required />
+                <button type="submit">Iniciar Sesión</button>
+                <p>¿No tienes una cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+            </form>
+        </div>
+        <div class="register-container" style="display: none;">
+            <h1>Registro</h1>
+            <form id="registerForm">
+                <input type="text" id="registerUsername" placeholder="Nombre de usuario" required />
+                <input type="password" id="registerPassword" placeholder="Contraseña" required />
+                <button type="submit">Registrarse</button>
+                <p>¿Ya tienes una cuenta? <a href="#" id="showLogin">Inicia Sesión</a></p>
+            </form>
+        </div>
+        <div class="container" style="display: none;">
+            <button id="logoutButton">Cerrar Sesión</button>
+            <h1>📌 To-Do List</h1>
+            <form id="taskForm">
+                <input type="text" id="taskInput" placeholder="Crtl + B para escribir..." required />
+                <button type="submit">➕ Agregar</button>
+            </form>
+            <div id="taskLists">
+                <div class="list-container">
+                    <h3>Pendientes</h3>
+                    <ul id="taskListPending"></ul>
+                </div>
+                <div class="list-container">
+                    <h3>En Curso</h3>
+                    <ul id="taskListInProgress"></ul>
+                </div>
+                <div class="list-container">
+                    <h3>Completadas</h3>
+                    <ul id="taskListCompleted"></ul>
+                </div>
             </div>
         </div>
     </div>
-
     <script type="module" src="public/js/main.js"></script>
 </body>
 </html>
