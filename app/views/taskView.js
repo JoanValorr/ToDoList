@@ -1,4 +1,3 @@
-// Importamos el módulo Storage para poder obtener las tareas almacenadas
 import Storage from "../../control/storage.js";
 
 class TaskView {

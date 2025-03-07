@@ -253,7 +253,7 @@ ul {
     gap: 15px;
 }
 
-#loginUsername, #loginPassword, #registerUsername, #registerPassword {
+#loginUsername, #loginPassword, #registerUsername, #registerPassword, #confirmPassword {
     padding: 15px;
     font-size: 16px;
     border: 2px solid #ddd;
@@ -264,7 +264,7 @@ ul {
     transition: all 0.3s ease-in-out;
 }
 
-#loginUsername:focus, #loginPassword:focus, #registerUsername:focus, #registerPassword:focus {
+#loginUsername:focus, #loginPassword:focus, #registerUsername:focus, #registerPassword:focus, #confirmPassword:focus {
     border-color: #a3c9f1;
     background-color: #ffffff;
 }

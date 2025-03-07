@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <form id="registerForm">
                 <input type="text" id="registerUsername" placeholder="Nombre de usuario" required />
                 <input type="password" id="registerPassword" placeholder="Contraseña" required />
+                <input type="password" id="confirmPassword" placeholder="Repite la contraseña" required />
                 <button type="submit">Registrarse</button>
                 <p>¿Ya tienes una cuenta? <a href="#" id="showLogin">Inicia Sesión</a></p>
             </form>
@@ -56,29 +57,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("showLogin").addEventListener("click", (e) => {
         e.preventDefault();
+        location.reload();
         document.querySelector(".register-container").style.display = "none";
         document.querySelector(".login-container").style.display = "block";
     });
 
     document.getElementById("loginForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        const username = document.getElementById("loginUsername").value.trim();
-        const password = document.getElementById("loginPassword").value.trim();
+        const usernameInput = document.getElementById("loginUsername");
+        const passwordInput = document.getElementById("loginPassword");
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        // Reset previous styles
+        usernameInput.style.borderColor = '';
+        passwordInput.style.borderColor = '';
+
         if (UserController.login(username, password)) {
+            usernameInput.style.borderColor = 'green';
+            passwordInput.style.borderColor = 'green';
             document.querySelector(".login-container").style.display = "none";
             document.querySelector(".container").style.display = "block";
             document.getElementById("todoTitle").textContent = `📌 To-Do List de ${username}`;
             TaskView.renderTasks();
             Events.setup();
         } else {
+            usernameInput.style.borderColor = 'red';
+            passwordInput.style.borderColor = 'red';
             alert("Nombre de usuario o contraseña incorrectos");
         }
     });
 
     document.getElementById("registerForm").addEventListener("submit", (e) => {
         e.preventDefault();
-        const username = document.getElementById("registerUsername").value.trim();
-        const password = document.getElementById("registerPassword").value.trim();
+        const usernameInput = document.getElementById("registerUsername");
+        const passwordInput = document.getElementById("registerPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+        const confirmPassword = confirmPasswordInput.value.trim();
+
+        // Reset previous styles
+        usernameInput.style.borderColor = '';
+        passwordInput.style.borderColor = '';
+        confirmPasswordInput.style.borderColor = '';
+
+        if (password !== confirmPassword) {
+            passwordInput.style.borderColor = 'red';
+            confirmPasswordInput.style.borderColor = 'red';
+            alert("Las contraseñas no coinciden");
+            return;
+        }
+
         if (UserController.register(username, password)) {
             alert("Usuario registrado con éxito");
             document.querySelector(".register-container").style.display = "none";
@@ -92,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         UserController.logout();
         document.querySelector(".container").style.display = "none";
         document.querySelector(".login-container").style.display = "block";
+        location.reload();
     });
 
     // Add keyboard shortcut for focusing on the task input field
@@ -99,6 +130,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.ctrlKey && e.key === "b") {
             e.preventDefault();
             document.getElementById("taskInput").focus();
+        }
+    });
+
+    // Add input event listener for password confirmation validation
+    document.getElementById("confirmPassword").addEventListener("input", () => {
+        const passwordInput = document.getElementById("registerPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const password = passwordInput.value.trim();
+        const confirmPassword = confirmPasswordInput.value.trim();
+
+        if (password === confirmPassword) {
+            passwordInput.style.borderColor = 'green';
+            confirmPasswordInput.style.borderColor = 'green';
+        } else {
+            passwordInput.style.borderColor = 'red';
+            confirmPasswordInput.style.borderColor = 'red';
         }
     });
 });

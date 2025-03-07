@@ -1,6 +1,3 @@
-// Importamos los módulos necesarios:
-// - Storage: para gestionar el almacenamiento de las tareas (recuperarlas y guardarlas).
-// - Task: modelo que representa una tarea.
 import Storage from "../../control/storage.js";
 import Task from "../models/Task.js";
 import TaskView from "../views/taskView.js";

@@ -39,6 +39,7 @@ class Events {
             }
         });
 
+        // Manejar eventos de enfoque y entrada en el campo de texto de tareas
         taskInput.addEventListener("focus", () => {
             taskInput.classList.remove("error");
             taskInput.placeholder = "Escribe una nueva tarea...";
@@ -52,5 +53,6 @@ class Events {
         });
     }
 }
+
 // Exportamos la clase Events para que pueda ser usada en otros archivos
 export default Events;
