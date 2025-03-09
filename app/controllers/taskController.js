@@ -13,14 +13,9 @@ class TaskController {
 
         // Creamos una nueva tarea con un ID único (timestamp) y el texto proporcionado
         const newTask = new Task(Date.now(), text);
-
-        // Añadimos la nueva tarea a la lista de tareas
         tasks.push(newTask);
-
-        // Guardamos la lista actualizada de tareas en el almacenamiento
         Storage.saveTasks(tasks);
 
-        // Volvemos a renderizar las tareas para que la vista se actualice
         TaskView.renderTasks();
     }
 
