@@ -10,11 +10,6 @@ class Events {
         // Configuramos el evento de submit en el formulario de creación de tareas
         taskForm.addEventListener("submit", (e) => {
             e.preventDefault();  // Prevenimos que el formulario recargue la página al enviarlo
-            if (!taskInput.value.trim()) {
-                taskInput.classList.add("error");
-                taskInput.placeholder = "Crtl + B para escribir...";
-                return;
-            }
             taskInput.classList.remove("error");
             TaskController.addTask(taskInput.value);  // Llamamos al método addTask de TaskController para agregar la tarea
             taskInput.value = "";  // Limpiamos el campo de texto del formulario
@@ -39,18 +34,6 @@ class Events {
             }
         });
 
-        // Manejar eventos de enfoque y entrada en el campo de texto de tareas
-        taskInput.addEventListener("focus", () => {
-            taskInput.classList.remove("error");
-            taskInput.placeholder = "Escribe una nueva tarea...";
-        });
-
-        taskInput.addEventListener("input", () => {
-            if (taskInput.value.trim()) {
-                taskInput.classList.remove("error");
-                taskInput.placeholder = "Crtl + B para escribir...";
-            }
-        });
     }
 }
 
